@@ -218,11 +218,9 @@ form label {
 }
 
 .box-vulnerability, .box-building {
-    height: 60px;
     border: 2px solid #CA6060;
     margin-top: 10px;
     text-align: center;
-    width: 48%;
     padding: 0;
 }
 
@@ -244,22 +242,12 @@ form label {
     width: 170px;
 }
 
-#building-count, #vulnerability-score, .score {
-    font-size: 30px;
-}
-
 #building-count, #vulnerability-score {
     height: 42px;
-    width: 130px;
 }
 
 .box-building {
-    float: right;
-}
-
-.subtext {
-    margin-top: -5px;
-    font-size: 10px;
+    /*float: right;*/
 }
 
 .landing-page-icon img {
@@ -270,7 +258,49 @@ form label {
     margin-top: 10px
 }
 
-.browse-header {
+.subtext {
+    margin-top: -5px;
+    font-size: 10px;
+    padding:1%;
+}
+
+@media only screen and (min-width: 400px) {
+   #building-count, #vulnerability-score, .score {
+    font-size: 10px;
+} 
+}
+
+@media only screen and (min-width: 700px) {
+   #building-count, #vulnerability-score, .score {
+    font-size: 15px;
+} 
+}
+
+@media only screen and (min-width: 900px) {
+   #building-count, #vulnerability-score, .score {
+    font-size: 20px;
+} 
+}
+
+@media only screen and (min-width: 1200px) {
+   #building-count, #vulnerability-score, .score {
+    font-size: 30px;
+}
+}
+
+@media only screen and (max-width: 992px) {
+  .browse-header {
+   background-color: #6AA47A;
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+}
+
+@media only screen and (min-width: 993px) {
+  .browse-header {
     background-color: #6AA47A;
     margin-top: -15px;
     margin-left: -15px;
@@ -278,7 +308,7 @@ form label {
     padding: 5px 15px;
     margin-bottom: 15px;
 }
-
+}
 .browse-header img {
     height: 25px;
 }
