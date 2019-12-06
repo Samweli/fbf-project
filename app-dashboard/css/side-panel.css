@@ -266,27 +266,60 @@ form label {
 
 @media only screen and (min-width: 400px) {
    #building-count, #vulnerability-score, .score {
-    font-size: 10px;
+    font-size: 8px;
 } 
+.subtext {
+    margin-top: -5px;
+    font-size: 6px;
+    padding:1%;
+}
 }
 
 @media only screen and (min-width: 700px) {
    #building-count, #vulnerability-score, .score {
-    font-size: 15px;
+    font-size: 14px;
 } 
+.subtext {
+    margin-top: -5px;
+    font-size: 8px;
+    padding:1%;
+}
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 950px) {
    #building-count, #vulnerability-score, .score {
-    font-size: 20px;
+    font-size: 22px;
 } 
+.subtext {
+    margin-top: -5px;
+    font-size: 10px;
+    padding:1%;
+}
 }
 
 @media only screen and (min-width: 1200px) {
    #building-count, #vulnerability-score, .score {
+    font-size: 2px;
+} 
+.subtext {
+    margin-top: -5px;
+    font-size: 10px;
+    padding:1%;
+}
+}
+
+@media only screen and (min-width: 1400px) {
+   #building-count, #vulnerability-score, .score {
     font-size: 30px;
 }
+.subtext {
+    margin-top: -5px;
+    font-size: 10px;
+    padding:1%;
 }
+}
+
+
 
 @media only screen and (max-width: 992px) {
   .browse-header {
