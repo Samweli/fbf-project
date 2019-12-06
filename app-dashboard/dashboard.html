@@ -349,48 +349,50 @@
         Summary for Flood <%= flood_name %>
     </div>
     <div class="flood-summary-info">
-        <table>
-            <tr>
-                <td>
-                    Acquisition Date
-                </td>
-                <td>
-                    <%= acquisition_date %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Forecast Date
-                </td>
-                <td>
-                    <%= forecast_date %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Source
-                </td>
-                <td>
-                    <%= source %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Notes
-                </td>
-                <td>
-                    <%= notes %>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Link
-                </td>
-                <td>
-                    <%= link %>
-                </td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <td>
+                        Acquisition Date
+                    </td>
+                    <td>
+                        <%= acquisition_date %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Forecast Date
+                    </td>
+                    <td>
+                        <%= forecast_date %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Source
+                    </td>
+                    <td>
+                        <%= source %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Notes
+                    </td>
+                    <td>
+                        <%= notes %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Link
+                    </td>
+                    <td>
+                        <%= link %>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div id="chart-score-panel">
         <div class="col-lg-12">
