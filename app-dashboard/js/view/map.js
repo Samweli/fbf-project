@@ -3,8 +3,9 @@ define([
     'jquery',
     'js/view/basemap.js',
     'js/view/layers.js',
-    'js/view/side-panel.js'
-], function (Backbone, $, Basemap, Layers, SidePanelView) {
+    'js/view/side-panel.js',
+    'js/view/intro.js',
+], function (Backbone, $, Basemap, Layers, SidePanelView, IntroView) {
     return Backbone.View.extend({
         initBounds: [[-21.961179941367273,93.86358289827513],[16.948660219367564,142.12675002072507]],
         initialize: function () {
@@ -23,6 +24,7 @@ define([
             // dispatcher registration
             dispatcher.on('map:draw-forecast-layer', this.drawForecastLayer, this);
             dispatcher.on('map:remove-forecast-layer', this.removeForecastLayer, this);
+            dispatcher.on('map:show-map', this.showMap, this);
         },
         removeForecastLayer: function(){
             if(this.forecast_layer){
@@ -33,7 +35,12 @@ define([
             this.map.fitBounds(this.initBounds);
             dispatcher.trigger('dashboard:reset')
         },
-        drawForecastLayer: function(forecast){
+        showMap: function() {
+            $(this.map._container).show();
+            this.map._onResize();
+            this.map.setZoom(5);
+        },
+        drawForecastLayer: function(forecast, callback){
             const that = this;
             // get zoom bbox
             forecast.fetchExtent()
@@ -51,6 +58,9 @@ define([
                     // register layer to view
                     that.forecast_layer = forecast_layer;
                     dispatcher.trigger('side-panel:open-dashboard');
+                    if(callback) {
+                        callback();
+                    }
                 })
 
         },
@@ -121,7 +131,8 @@ define([
                 that.redraw();
             });
 
-            this.side_panel = new SidePanelView()
+            this.side_panel = new SidePanelView();
+            this.intro_view = new IntroView();
         },
         polygonDrawn: function () {
             if (this.drawGroup && this.drawGroup.getLayers().length > 0) {
